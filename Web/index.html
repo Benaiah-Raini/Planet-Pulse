@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght,SOFT@0,9..144,100..900,100;1,9..144,100..900,100&family=Montserrat:ital,wght@0,100..900;1,100..900&family=Shrikhand&display=swap" rel="stylesheet">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght,SOFT@0,9..144,100..900,100;1,9..144,100..900,100&family=Fredoka:wght@300..700&family=Montserrat:ital,wght@0,100..900;1,100..900&family=Shrikhand&display=swap" rel="stylesheet">
+<title>Planet Pulse | Carbon Footprint Calculator </title>
+<link rel="stylesheet" href="styles.css">
+<link rel="stylesheet" href="classic.css" type="text/css" />
+<link rel="stylesheet" href="classic.date.css" type="text/css" />
+
+
+
+</head>
+<body>
+  <div class="cursor">
+<nav class="navbar">
+  <ul>
+    <li><a href="#about"><b>About Us</b></a></li>
+    <li><a href="#resources"><b>Resources</b></a></li>
+    <li><a href="#calculator"><b>Calculator</b></a></li>
+    <li><a href="#home"><b>Home</b></a></li>
+  </ul>
+</nav>
+  
+<div class="welcome-section">
+  <div>
+    <h1>Welcome to Planet Pulse – <br>Your Eco-Companion!</h1>
+    <p>Planet Pulse simplifies sustainability. We empower you to <strong><u>measure</u>, <u>monitor</u>, and <u>reduce</u></strong> your carbon footprint effortlessly. With intuitive solutions and accessible design, we're here to help you make a difference – <br>one pulse at a time.</p>
+    <p>Ready to pulse forward? Let's make sustainability simple together!</p>
+    <a href="https://carbon-calculator-kzvv7xpjqnmbcaj8gdpqml.streamlit.app/" ><strong>Pulse</strong></a>
+  </div>
+</div>
+
+<div class="calculator-section">
+  <h2 id="calculator">Pulse Away</h2>
+  <h2 id="calculator">A Demo on the Carbon footprint Calculator</h2>
+  <form id="carbon-form">
+    <fieldset>
+      <legend>Transportation</legend>
+      <label for="transport-method">Transport Method:</label>
+      <select id="transport-method" required>
+        <option value="">Select...</option>
+        <option value="gas_car">gasoline car</option>
+        <option value="electric_car">Electric car</option>
+        <option value="bus">Bus</option>
+        <option value="train">Train</option>
+        <option value="bike">bike</option>
+        <option value="walk">walk</option>
+      </select>
+    </fieldset>
+
+    <fieldset>
+      <legend>Energy Consumption</legend>
+      <label for="electric-usage">Electric Usage (kWh):</label>
+      <input type="number" id="electric-usage" name="electric-usage" placeholder="Enter kWh" required min="0">
+    </fieldset>
+
+    <fieldset>
+      <legend>Diet</legend>
+      <label for="food-category">Food Category:</label>
+      <select id="food-category" required>
+        <option value="">Select...</option>
+        <option value="beef">Beef</option>
+        <option value="pork">Pork</option>
+        <option value="chicken">Chicken</option>
+        <option value="fish">fish</option>
+        <option value="vegetables">vegetables</option>
+        <option value="fruits">fruits</options>
+      </select>
+      <label for="num-of-meals">Number of Meals:</label>
+      <input type="number" id="num-of-meals" name="num-of-meals" placeholder="Enter number" required min="0">
+    </fieldset>
+
+    <button type="submit" aria-label="Calculate Carbon Footprint">Calculate</button>
+  </form>
+
+</div>
+
+
+
+
+<div class="resources-section">
+  <h2 id="resources">Resources</h2>
+  <p>Let's keep the Earth clean, it's not Uranus!</p>
+  <div class="card-container">
+    <!-- Card 1 -->
+    <div class="card1">
+      <img src="https://www.epa.gov/sites/all/themes/epa/img/epa-standard-twitter.jpg" alt="Description of Image 1">
+      <a href="https://www.epa.gov/" target="_blank">Learn about environmental issues and regulations.</a>
+    </div>
+    <!-- Card 2 -->
+    <div class="card1">
+      <img src="https://ctprodstorageaccountp.blob.core.windows.net/prod-drupal-files/images/default/Destination-net-zero-cover.jpg" alt="Description of Image 2">
+      <a href="https://www.carbontrust.com/" target="_blank">Helps businesses and governments reduce carbon emissions.</a>
+    </div>
+    <!-- Card 3 -->
+    <div class="card1">
+      <img src="https://climate.nasa.gov/rails/active_storage/representations/redirect/eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaHBBelpZQWc9PSIsImV4cCI6bnVsbCwicHVyIjoiYmxvYl9pZCJ9fQ==--a9dc2186d49119384b41b3cfabc9ecb234c9f6e1/eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaDdCam9MWm05eWJXRjBPZ2wzWldKdyIsImV4cCI6bnVsbCwicHVyIjoidmFyaWF0aW9uIn19--308d105b858fde2aa7c2bd953e87f719e2dd73bb/spinning_globe.jpeg?content_type=image%2Fwebp&disposition=inline" alt="Description of Image 3">
+      <a href="https://climate.nasa.gov/" target="_blank">Extensive resources on climate change and scientific data.</a>
+    </div>
+  </div>
+  <div class="card-container2">
+    <!-- Card 4 -->
+    <div class="card1">
+      <img src="https://climateaction.africa/wp-content/uploads/2024/03/February-2024-has-been-declared-the-hottest-month-ever-recorded-globally-1024x576.jpg.webp" alt="Description of Image 4">
+      <a href="https://climateaction.africa/temperature-february-climate-change-hottest/" target="_blank">February Declared as the hottest month ever recorded globally.</a>
+    </div>
+    <!-- Card 5 -->
+    <div class="card1">
+      <img src="https://climateaction.africa/wp-content/uploads/2024/03/5-Critical-environmental-challenges-in-Africa-in-2024-1024x640.jpg.webp" alt="Description of Image 5">
+      <a href="https://climateaction.africa/5-environmental-challenges-africa-2024/" target="_blank">5-Critical-environmental-challenges-in-Africa-in-2024</a>
+    </div>
+    <!-- Card 6 -->
+    <div class="card1">
+      <img src="https://www.environment.co.za/wp-content/uploads/2021/12/Featured-Image.webp" alt="Description of Image 6">
+      <a href="https://www.environment.co.za/environmental-issues/how-to-promote-environmental-issues-awareness-as-a-student.html" target="_blank">How to Promote Environmental Issues Awareness as a Student?</a>
+    </div>
+  </div>
+  </div>
+
+
+<div class="element">
+
+
+<div class="about-section">
+  <h2 id="about">About Our Team</h2>
+  <div class="team-member">
+    <img src="Assets/Bena.png" alt="Name of Team Member 1">
+    <h3><a href="https://github.com/Benaiah-Raini" target="_blank" class="github-link">Bena</a></h3>
+    <p>boy</p>
+    <p>does Front-end & back-end and data engineering things.</p>
+  </div> 
+ 
+
+<footer>
+  <p>&copy; 2024 Planet Pulse. All rights reserved.</p>
+</footer>
+
+</div>
+<script>
+  // Get the cursor element
+  var cursor = document.querySelector('.cursor');
+  
+  // Add mousemove event listener to the document
+  document.addEventListener('mousemove', function(e) {
+      // Set the cursor position to the current mouse coordinates
+      cursor.style.left = e.pageX + 'px';
+      cursor.style.top = e.pageY + 'px';
+      
+      // Create a new leaf element
+      var leaf = document.createElement('div');
+      leaf.classList.add('leaf');
+      
+      // Set the leaf position to the current mouse coordinates
+      leaf.style.left = e.pageX + 'px';
+      leaf.style.top = e.pageY + 'px';
+      
+      // Add the leaf to the document
+      document.body.appendChild(leaf);
+      
+      // Remove the leaf after a short delay
+      setTimeout(function() {
+          leaf.remove();
+      }, 1000);
+  });
+  </script>
+
+
+
+
+</body>
+</html>
