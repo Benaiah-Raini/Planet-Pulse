@@ -62,18 +62,18 @@ def main():
 
 
         # Display results
-        st.write(f"Your total carbon footprint is: {total_carbon_footprint} kg CO2e")
+         st.write(f"Your total carbon footprint is: {total_carbon_footprint} kg CO2e")
         
         # Generate recommendations
-        recommendations = generate_recommendations(total_carbon_footprint)
-        st.write("Here are some recommendations to reduce your carbon footprint:")
-        for recommendation in recommendations:
+    recommendations = generate_recommendations(total_carbon_footprint)
+    st.write("Here are some recommendations to reduce your carbon footprint:")
+    for recommendation in recommendations:
             st.write("- " + recommendation)
 
         # Send email button
-        if receiver_email and st.button("Send Email"):
-            send_email(total_carbon_footprint, recommendations, receiver_email)
-            st.write("Email sent successfully!")
+    if receiver_email and st.button("Send Email"):
+       send_email(total_carbon_footprint, recommendations, receiver_email)
+        st.write("Email sent successfully!")
 
 if __name__ == "__main__":
     main()
