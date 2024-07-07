@@ -43,7 +43,7 @@ def main():
     st.image("Assets/Untitled design (1).svg", use_column_width=True)
 
     # User inputs
-    transport_method.lower() = st.selectbox("Select Transport Method", ["gas_car", "electric_car", "bus", "train", "bike", "'walk"])
+    transport_method = st.selectbox("Select Transport Method", ["gas_car", "electric_car", "bus", "train", "bike", "walk"]).lower()
     distance = st.number_input("Distance (in miles)")
     usage = st.number_input("Electric Usage (in kWh)")
     category = st.selectbox("Select Food Category", ["Beef", "Pork", "Chicken", "fish", "vegetables", "fruits"])
@@ -62,18 +62,18 @@ def main():
 
 
         # Display results
-        st.write(f"Your total carbon footprint is: {total_carbon_footprint} kg CO2e")
+         st.write(f"Your total carbon footprint is: {total_carbon_footprint} kg CO2e")
         
         # Generate recommendations
-        recommendations = generate_recommendations(total_carbon_footprint)
-        st.write("Here are some recommendations to reduce your carbon footprint:")
-        for recommendation in recommendations:
+    recommendations = generate_recommendations(total_carbon_footprint)
+    st.write("Here are some recommendations to reduce your carbon footprint:")
+    for recommendation in recommendations:
             st.write("- " + recommendation)
 
         # Send email button
-        if receiver_email and st.button("Send Email"):
-            send_email(total_carbon_footprint, recommendations, receiver_email)
-            st.write("Email sent successfully!")
+    if receiver_email and st.button("Send Email"):
+       send_email(total_carbon_footprint, recommendations, receiver_email)
+       st.write("Email sent successfully!")
 
 if __name__ == "__main__":
     main()
