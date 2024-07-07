@@ -145,7 +145,7 @@ def generate_recommendations(total_carbon_footprint):
         recommendations.append("Opt for biking or walking short distances instead of driving.")
         recommendations.append("Unplug chargers and appliances when not in use to save energy.")
         recommendations.append("Choose locally sourced and seasonal foods to reduce carbon emissions from transportation.")
-         recommendations.append("Reduce your overall number of car trips. Walk, bike, or use public transport whenever possible.")
+        recommendations.append("Reduce your overall number of car trips. Walk, bike, or use public transport whenever possible.")
     elif total_carbon_footprint > 50:
         recommendations.append("Reduce your meat consumption, especially red meat like beef.")
         recommendations.append("Consider adopting a more plant-based diet.")
