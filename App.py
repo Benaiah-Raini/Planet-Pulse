@@ -73,7 +73,7 @@ def main():
         # Send email button
     if receiver_email and st.button("Send Email"):
        send_email(total_carbon_footprint, recommendations, receiver_email)
-        st.write("Email sent successfully!")
+       st.write("Email sent successfully!")
 
 if __name__ == "__main__":
     main()
