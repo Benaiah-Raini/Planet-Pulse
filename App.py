@@ -43,7 +43,7 @@ def main():
     st.image("Assets/Untitled design (1).svg", use_column_width=True)
 
     # User inputs
-    transport_method.lower() = st.selectbox("Select Transport Method", ["gas_car", "electric_car", "bus", "train", "bike", "'walk"])
+    transport_method = st.selectbox("Select Transport Method", ["gas_car", "electric_car", "bus", "train", "bike", "walk"]).lower()
     distance = st.number_input("Distance (in miles)")
     usage = st.number_input("Electric Usage (in kWh)")
     category = st.selectbox("Select Food Category", ["Beef", "Pork", "Chicken", "fish", "vegetables", "fruits"])
