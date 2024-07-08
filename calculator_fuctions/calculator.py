@@ -179,7 +179,7 @@ def calculate_footprint():
 
   total_footprint = calculator.calculate_total_carbon_footprint()
 
-  recommendations = generate_recommendations(total_carbon_footprint)
+  recommendations = generate_recommendations(total_individual_carbon_footprint)
 
   return jsonify({'footprint': total_footprint, 'recommendations': recommendations})
 
