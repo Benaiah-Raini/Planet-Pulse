@@ -1,5 +1,5 @@
 import streamlit as st
-from calculator_fuctions.calculator import CarbonFootprintCalculator
+from calculator_fuctions.calculator import CarbonFootprintCalculator, generate_recommendations
 import smtplib
 from email.mime.multipart import MIMEMultipart
 from email.mime.text import MIMEText

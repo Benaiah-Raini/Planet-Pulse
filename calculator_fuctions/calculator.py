@@ -1,3 +1,5 @@
+from flask import Flask, request, jsonify
+
 class CarbonFootprintCalculator:
     """
     A class to calculate carbon footprint based on transportation, electricity usage, and food consumption.
@@ -135,18 +137,18 @@ total_individual_carbon_footprint = calculator.calculate_total_carbon_footprint(
 
 print("Total Individual Carbon Footprint: {} tons CO2e".format(total_individual_carbon_footprint))
 
-def generate_recommendations(total_carbon_footprint):
+def generate_recommendations(total_individual_carbon_footprint):
     recommendations = []
-    if total_carbon_footprint > 200:  # Example threshold for high carbon footprint
+    if total_individual_carbon_footprint > 200:  # Example threshold for high carbon footprint
         recommendations.append("Consider using public transportation or carpooling to reduce emissions from transportation.")
         recommendations.append("Switch to energy-efficient appliances and turn off unused electronics to reduce electricity consumption.")
         recommendations.append("Reduce consumption of high-carbon foods like beef and pork, and incorporate more plant-based meals into your diet.")
-    elif total_carbon_footprint > 100:  # Example threshold for moderate carbon footprint
+    elif total_individual_carbon_footprint > 100:  # Example threshold for moderate carbon footprint
         recommendations.append("Opt for biking or walking short distances instead of driving.")
         recommendations.append("Unplug chargers and appliances when not in use to save energy.")
         recommendations.append("Choose locally sourced and seasonal foods to reduce carbon emissions from transportation.")
         recommendations.append("Reduce your overall number of car trips. Walk, bike, or use public transport whenever possible.")
-    elif total_carbon_footprint > 50:
+    elif total_individual_carbon_footprint > 50:
         recommendations.append("Reduce your meat consumption, especially red meat like beef.")
         recommendations.append("Consider adopting a more plant-based diet.")
         recommendations.append("Plant trees to offset your carbon footprint.")
@@ -157,4 +159,30 @@ def generate_recommendations(total_carbon_footprint):
         recommendations.append("Consider supporting sustainable farming practices by choosing organic and locally produced foods.")
 
     return recommendations
+
+app = Flask(__name__)
+@app.route('/calculate', methods=['POST'])
+def calculate_footprint():
+  data = request.get_json()
+
+  calculator = CarbonFootprintCalculator()
+
+  transport_method = data['transportMethod'].lower()
+  distance = data.get('distance', 0)
+  electricity_usage = data.get('electricityUsage', 0)
+  num_meals = data['numMeals']
+  food_category = data['foodCategory'].lower()
+
+  calculator.transport_footprint(transport_method, distance)
+  calculator.electricity_footprint(usage)
+  calculator.food_footprint(category, num_of_meals)
+
+  total_footprint = calculator.calculate_total_carbon_footprint()
+
+  recommendations = generate_recommendations(total_carbon_footprint)
+
+  return jsonify({'footprint': total_footprint, 'recommendations': recommendations})
+
+if __name__ =='__main__':
+  app.run(debug=True)
 
