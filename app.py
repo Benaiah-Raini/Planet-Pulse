@@ -1,6 +1,7 @@
 from flask import Flask, render_template, request, jsonify
+from utils.calculator import calculate_footprint
 
-app = Flask(__name__)
+app = Flask(__name__ , )
 
 # Route for the main page
 @app.route("/")
