@@ -169,9 +169,9 @@ def calculate_footprint():
 
   transport_method = data['transportMethod'].lower()
   distance = data.get('distance', 0)
-  electricity_usage = data.get('electricityUsage', 0)
-  num_meals = data['numMeals']
-  food_category = data['foodCategory'].lower()
+  usage = data.get('electricityUsage', 0)
+  num_of_meals = data['numMeals']
+  category = data['foodCategory'].lower()
 
   calculator.transport_footprint(transport_method, distance)
   calculator.electricity_footprint(usage)
