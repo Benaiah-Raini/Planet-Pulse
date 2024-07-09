@@ -1,16 +1,13 @@
 from flask import Flask, render_template, request, jsonify
-from utils.calculator import calculate_footprint
 
-<<<<<<< HEAD
-app = Flask(__name__ , )
-=======
+
 app = Flask(__name__ , template_folder='Web/index.html')
->>>>>>> 6b2c5f6d618da8a1e4a97c981c2f0419f083d483
+
 
 # Route for the main page
 @app.route("/")
 def index():
-    return render_template("index.html")  
+    return render_template("Web/index.html")  
 
 # Route for handling footprint calculation 
 @app.route("/calculate", methods=["POST"])
@@ -27,7 +24,7 @@ def calculate_footprint_handler():
             return jsonify({"footprint": footprint})
         except Exception as e:
             # Handle potential errors (e.g., missing data)
-            return jsonify({"error": str(e)}), 
+            return jsonify({"error": str(e)})
 
 if __name__ == "__main__":
     app.run(debug=True)
