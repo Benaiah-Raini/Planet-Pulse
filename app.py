@@ -1,6 +1,6 @@
 from flask import Flask, render_template, request, jsonify
 
-app = Flask(__name__)
+app = Flask(__name__ , template_folder='Web/index.html')
 
 # Route for the main page
 @app.route("/")
