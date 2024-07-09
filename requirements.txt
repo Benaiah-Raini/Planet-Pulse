@@ -1,2 +1,8 @@
+<<<<<<< HEAD
 Flask==2.2.3
 requests>=2.28.1
+=======
+Flask==3.0.3
+requests>=2.28.1
+gunicorn
+>>>>>>> 6b2c5f6d618da8a1e4a97c981c2f0419f083d483
