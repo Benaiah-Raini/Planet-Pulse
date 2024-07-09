@@ -1,4 +1,5 @@
 from flask import Flask, render_template, request, jsonify
+from utils.calculator import calculate_footprint
 
 app = Flask(__name__ , template_folder='Web/index.html')
 
