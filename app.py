@@ -1,13 +1,11 @@
 from flask import Flask, render_template, request, jsonify
 
-
-app = Flask(__name__ , template_folder='templates/index.html')
-
+app = Flask(__name__, template_folder='templates')  # Correct: set 'templates' as the directory
 
 # Route for the main page
 @app.route("/")
 def index():
-    return render_template("templates/index.html")
+    return render_template("index.html")  # Remove "templates/" here
 
 # Route for handling footprint calculation 
 @app.route("/calculate", methods=["POST"])
