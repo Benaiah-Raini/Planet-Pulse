@@ -82,6 +82,54 @@
 
 </div>
 
+<div id="result"></div>
+  
+  <ul id="recommendations"></ul>
+  <script>
+    const form = document.getElementById('cabon-form');
+    form.addEventListener('submit', (event) => {
+      event.preventDefault(); // prevent default form submission
+      const transportMethod = document.getElementById('transport_method').value;
+      const distance = parseFloat(document.getElementById('distance').value);
+      const electricityUsage = parseFloat(document.getElementById('usage').value);
+      const numMeals = parseInt(document.getElementById('num-of-meals').value);
+      const foodCategory = document.getElementById('food-category').value;
+      // sending data to calculator.py using fetch API
+      fetch('/calculate', {
+        method: 'POST',
+        body: JSON.stringify({
+          transportMethod,
+          distance,
+          electricityUsage,
+          numMeals,
+          foodCategory,
+        })
+      })
+      .then(response => response.json())
+      .then(data => {
+        const resultDiv = document.getElementById('result');
+        resultDiv.textContent = 'Your carbon footprint is: ${data.footprint} tons CO2e';
+
+        const recommendationsList = document.getElementById('recommendations');
+        recommendationsList.innerHTML ='';
+
+        if (data.recommendations) {
+          data.recommendations.forEach(recommendation => {
+            const listItem = document.createElement('li');
+            listItem.textContent = recommendation;
+            recommendationsList.appendChild(listItem);
+          })
+          
+        } else {
+          recommendationsList.textContent = 'Great job! Keep up the sustainable practices.';
+        }
+      })
+      .catch(error => {
+        console.error('Error:', error);
+      });
+    });
+  </script>
+
 
 
 
