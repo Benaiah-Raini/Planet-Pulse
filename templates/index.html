@@ -76,6 +76,19 @@
 
     <button type="submit" aria-label="Calculate Carbon Footprint">Calculate</button>
   </form>
+   {% if session.get('carbon_footprint') %}
+    <h2>Your Carbon Footprint</h2>
+    <p>Total: {{ session['carbon_footprint'] }} units</p>
+
+    <h2>Recommendations for Reducing Footprint</h2>
+    <ul>
+      {% for recommendation in session.get('recommendations') %}
+        <li>{{ recommendation }}</li>
+      {% endfor %}
+    </ul>
+  {% else %}
+    <p>No carbon footprint calculation has been done yet.</p>
+  {% endif %}
 
 </div>
 
