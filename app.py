@@ -16,7 +16,7 @@ def calculate_footprint_handler():
             data = request.form  #form data in index.html
 
             # Call the calculate function from calculator.py 
-            footprint = calculate_footprint(data)
+            footprint = calculate_total_carbon_footprint(data)
             recommendations = generate_recommendations(footprint)
 
              # Store footprint and recommendations in session
