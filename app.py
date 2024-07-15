@@ -23,7 +23,7 @@ def calculate_footprint_handler():
             session['carbon_footprint'] = footprint
             session['recommendations'] = recommendations
 
-             return render_template("index.html")
+            return render_template("index.html")
             
         except Exception as e:
             # Handle potential errors (e.g., missing data)
