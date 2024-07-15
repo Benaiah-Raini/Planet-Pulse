@@ -17,12 +17,37 @@ def calculate_footprint_handler():
 
             # Call the calculate function from calculator.py 
             footprint = calculate_footprint(data)
+            recommendations = generate_recommendations(footprint)
 
-            # Return JSON response with the calculated footprint
-            return jsonify({"footprint": footprint})
+             # Store footprint and recommendations in session
+            session['carbon_footprint'] = footprint
+            session['recommendations'] = recommendations
+
+            # Redirect to the result page
+            return redirect(url_for('result'))
+            
         except Exception as e:
             # Handle potential errors (e.g., missing data)
             return jsonify({"error": str(e)})
+
+# Route for displaying results
+@app.route("/result")
+def result():
+    footprint = session.get('carbon_footprint')  # Retrieve from session
+    recommendations = session.get('recommendations')
+
+    if footprint is None:
+        # No calculation done yet
+        message = "No carbon footprint calculation has been done yet."
+    else:
+        message = None
+
+    return render_template("result.html", data=dict(
+        total_carbon_footprint=footprint,
+        recommendations=recommendations,
+        message=message
+    ))
+
 
 if __name__ == "__main__":
     app.run(debug=True)
