@@ -1,4 +1,4 @@
-from flask import Flask, render_template, request, jsonify
+from flask import Flask, render_template, request, jsonify, session
 
 app = Flask(__name__, template_folder='templates')  # Correct: set 'templates' as the directory
 
